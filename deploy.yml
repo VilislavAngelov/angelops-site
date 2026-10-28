@@ -1,0 +1,14 @@
+name: Deploy
+
+  on:
+    push:
+      branches: [main]
+
+  permissions:
+    contents: read
+
+  jobs:
+    deploy:
+      runs-on: self-hosted
+      steps:
+        - run: cd ~/angelops-site && git pull && docker compose up -d --build --remove-orphans
