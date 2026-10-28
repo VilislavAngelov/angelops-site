@@ -3,3 +3,9 @@ services:
   site:
     build: .
     restart: always
+    networks:
+      - angelops
+
+networks:
+  angelops:
+    external: true
